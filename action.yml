@@ -1,0 +1,18 @@
+name: 'AOSP Build setup'
+description: 'Add build prerequisites for android'
+inputs:
+  test-input:  # id of input
+    description: 'Test of input param'
+    required: true
+    default: 'DFL'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello you added param: ${{ inputs.test-input }}.
+      shell: bash
+    - run: test-action.sh ${{ inputs.test-input }}
+      shell: bash

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo "Setup user!"
+echo "Setup user!(Params: $@)"
 
 sudo apt-get install repo git-core gnupg flex bison build-essential zip curl zlib1g-dev \
 		     libc6-dev-i386 libncurses5 x11proto-core-dev libx11-dev lib32z1-dev \
